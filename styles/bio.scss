@@ -1,0 +1,304 @@
+@use './partials/variables' as *;
+@use './partials/font' as *;
+@use './partials/mixin' as *;
+
+*{
+  font-family: 'Avenir', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $primary-black;
+}
+
+.site-header {
+  background-color: $primary-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
+  width: 100%; 
+ 
+  @include tablet {
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    padding-left: 2rem;
+  }
+
+  @include desktop {
+    padding:0 5rem;
+  }
+
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &__lists{
+    list-style-type: none;
+    padding: 1.5rem 5em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    color: $primary-white;
+    text-decoration: none;
+  }
+
+  &__logo  {
+    width: 120px;
+    height: 20px;
+  }
+
+}
+.active {
+  border-bottom: 4px solid $primary-white;
+
+  @include tablet {
+    width: 6%;
+  }
+
+}
+
+.hero-image{
+  background: linear-gradient($opacity_by, $opacity_by) , url(../styles/assets/images/hero-bio.jpg);
+  height:30vh ;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  
+  @include tablet {
+    height: 60vh;
+    padding: 3rem;
+  }
+
+  @include desktop {
+    height: 50vh;
+    padding: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    color: $primary-white;
+  
+    @include tablet {
+      @include page_header;
+    }
+
+    @include desktop {
+      @include page_header;
+      padding: 0 4rem;
+    }
+  }
+}
+
+.main-image {
+  width: 100%;
+
+  @include tablet {
+    width: 80%;
+    margin: 0 80px;
+  }
+}
+
+.main-heading { 
+  @include tablet {
+    padding:0 5rem;
+
+  }
+
+  @include desktop {
+    margin-left: 3rem ;
+  }
+}
+
+.main-text {
+ @include tablet {
+  margin: 0 80px;
+ }
+  
+ &__span {
+  font-weight: 400;
+ }
+}
+
+.main-paragraph {
+  @include tablet {
+  display: flex;
+  padding: 0 1rem;
+  margin: 0 3rem;
+  width: 85%;
+  }
+}
+
+.main-heading__paragraph {
+  @include tablet {
+    padding: 15px;
+  }
+
+  @include desktop {
+    padding: 1rem;
+  }
+}
+
+.gallery-image {
+  background-color: $secondary_alabaster;
+  width: 100%;
+  @include tablet {
+    width: 30%;
+    margin: 1.5rem 0;
+  }
+}
+
+.galleries {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+.gallery {
+  background-color: #FAFAFA;
+
+  &-heading {
+    padding: 1rem;
+
+    @include tablet {
+      @include section-header;
+    }
+  }
+
+  @include tablet {
+    @include body_copy;
+    padding: 1.5rem;
+  }
+
+  @include desktop {
+    @include body_copy;
+      padding: 2rem 4rem;
+    }
+  }
+
+
+.about-section {
+  background-color: $primary-white;
+  padding: 1rem;
+
+  &__heading {
+   padding: 1.5rem 0 1rem 0 ;
+
+   @include tablet {
+    @include section-header;
+   }
+  }
+
+  @include desktop {
+    padding: 2rem 4rem;
+  }
+}
+
+.main {
+  margin: 15px 0;
+
+  &-heading {
+    margin: 15px 0;
+  }
+}
+
+.site-footer {
+  background-color: $primary-black;
+  color: $primary-white;
+  padding: 1rem;
+  margin: 20px 0;
+
+  &__icons {
+    display: flex;
+    width: 40%;
+    margin: 10px 0;
+  }
+
+  &__icon {
+    margin-right: 25px;
+  }
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem;
+  }
+}
+
+.footer-box {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    order: 1;
+  }
+}
+
+.footer-logo{
+  @include tablet{
+    order: 1;
+    margin-left: auto;
+  }
+}
+
+.container {
+  padding-bottom: 2rem;
+  
+  &-cards {
+    margin: 20px 0;
+  }
+  &-card__name {
+    @include subheader;
+  }
+
+  &-card__detail {
+    @include subheader;
+  }
+
+
+  &-card__address {
+    @include copy;
+    margin: 10px 0;
+  }
+
+  &-card__link {
+    text-decoration: none;
+    color: $primary-white;
+  }
+
+  @include tablet {
+    display: flex;
+    order: 2;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    width: 80%;
+  }
+}
+
+.footer-text {
+  @include tablet {
+    order: 2;
+    width: 100%;
+  }
+}
