@@ -69,7 +69,7 @@ body {
 }
 
 .hero-image{
-  background: linear-gradient($opacity_by, $opacity_by) , url(../styles/assets/images/hero-bio.jpg);
+  background: linear-gradient($opacity_by, $opacity_by) , url(../assets/images/hero-bio.jpg);
   height:30vh ;
   background-size: cover;
   background-position: center;
@@ -217,10 +217,146 @@ body {
   }
 }
 
+.comment-containers {
+  background-color: $primary-white;
+  padding: 3rem 3rem 1rem 3rem;
+  
+  
+  &__title {
+    color: #323232;
+    font-size: 32px;
+  }
+}
+
+.comment-container {
+  display: flex;
+  border-bottom: 1px solid $secondary-mercury;
+  padding-bottom: 1rem;
+
+  @include tablet {
+    padding-left: 2rem;
+  }
+  
+  @include desktop {
+    width: 60%;
+    margin: 0 auto;
+    
+    // justify-content: center;
+    // align-content:center ;
+
+  }
+
+  &__image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-top: 2.5rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+    color: #323232;
+
+  }
+
+  &__title {
+    color: #AFAFAF;
+    padding: .5rem 0;
+    // font-weight:bold ;
+  }
+  
+  &__text {
+    margin-top: .5 rem;
+    padding: .5rem;
+  }
+
+
+  &__btn {
+    background-color: $primary-black;
+    color: $primary-white;
+    margin-top: .5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+
+    @include tablet {
+      width: 30%;
+      text-align:center;
+      align-self: flex-end;
+      // font-weight: bold;
+    }
+  }
+}
+
+.conversation {
+  background-color: $primary-white;
+  padding-left: 0 .5rem;
+}
+
+.comments {
+  background-color: $primary-white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  padding: 2rem;
+
+  
+  &-details {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid $secondary-mercury;
+
+    @include tablet {
+      padding-left: 2rem;
+    }
+
+    @include desktop {
+      width: 60%;
+      margin: 0 auto;
+      // align-items: center;
+      // justify-content: center;
+    }
+  }
+
+  &-avatar {
+    background-color:$secondary-mercury;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 1rem;
+  }
+
+  &-name {
+    display: flex;
+    flex-direction: row;
+    padding: 2 3rem;
+    width: 100%;
+  }
+
+  &-name__header {
+    color: #323232;
+  }
+
+  &-name__date {
+    color: #AFAFAF;
+    margin-left: auto;
+  }
+
+  &-name__parag {
+    width: 100%;
+  }
+}
+
+
 .site-footer {
   background-color: $primary-black;
   color: $primary-white;
-  padding: 1rem;
+  padding: 2rem;
   margin: 20px 0;
 
   &__icons {

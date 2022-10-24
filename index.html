@@ -5,18 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles/bio.css">
+  <script src="./scripts/index-page.js"></script>
   <title>BandSite</title>
 </head>
 <body>
   <header class="site-header">
-    <a href="./styles/assets/logo/Logo-bandsite.svg"> <img src="./styles/assets/logo/Logo-bandsite.svg" alt="" class="site-header__logo"></a>
+    <a href="./assets/logo/Logo-bandsite.svg"> <img src="./assets/logo/Logo-bandsite.svg" alt="" class="site-header__logo"></a>
   <nav class="site-header__nav">
    <ul class="site-header__list">
     <li class="site-header__lists active">
-      <a class="site-header__link " href="">Biography</a>
+      <a class="site-header__link " href="./index.html">Biography</a>
     </li>
     <li class="site-header__lists">
-      <a class="site-header__link" href="">Shows</a>
+      <a class="site-header__link" href="./pages/shows.html">Shows</a>
     </li>
   </ul>
   </nav>
@@ -30,7 +31,7 @@
     
       <h1 class="about-section__heading">About the Musicians</h1>
     <div class="about-section__container">
-      <img class="main-image" src="./styles/assets/images/band.jpg" alt="band">
+      <img class="main-image" src="./assets/images/band.jpg" alt="band">
       <h4 class="main-text">“We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'” <br> <span class="main-text__span">- Bryan Teddy, lead vocalist of The Bees Knees</span>
       </h4>
     </div>
@@ -51,30 +52,85 @@
 <section class="gallery">
   <h1 class="gallery-heading">Photo Gallery</h1>
   <div class="galleries">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-1.jpg" alt="image1">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-2.jpg" alt="image2">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-3.jpg" alt="image3">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-4.jpg" alt="image4">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-5.jpg" alt="image5">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-6.jpg" alt="image6">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-7.jpg" alt="image7">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-8.jpg" alt="image8">
-    <img class="gallery-image" src="./styles/assets/images/Photo-gallery-9.jpg" alt="image9">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-1.jpg" alt="image1">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-2.jpg" alt="image2">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-3.jpg" alt="image3">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-4.jpg" alt="image4">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-5.jpg" alt="image5">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-6.jpg" alt="image6">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-7.jpg" alt="image7">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-8.jpg" alt="image8">
+    <img class="gallery-image" src="./assets/images/Photo-gallery-9.jpg" alt="image9">
 </div>
 </section>
+<div class="conversation">
+    <section class="comment-containers">
+      <h1 class="comment-containers__title">Join the Conversation</h1>
+          <div class="comment-container">
+              <img class="comment-container__image" src="./assets/images/Mohan-muruge.jpg" alt="image">
+              <form action="" method="GET" class="comment-container__form">
+                  <label class="comment-container__title" for="fullName"> NAME</label>
+                     <input type="text" name="fullName" placeholder="Enter your name">
+                  <label class="comment-container__title" for="comment"> COMMENT</label>
+                      <textarea class="comment-container__text" name="comment" id="" cols="20" rows="5">Add a new comment</textarea>
+                  <button class="comment-container__btn">COMMENT</button>
+              </form>
+          </div> 
+    </section>
+    
+    <section class="comments">
+        <div class="comments-details">
+          <div class="comments-avatar"></div>
+          <div class="comments-parts">
+            <div class="comments-name">
+              <h3 class="comments-name__header">Conner Walton</h3>
+              <p class="comments-name__date">02/17/2021</p>
+            </div>
+            <p class="comments-name__parag">
+              This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
+            </p>
+          </div>
+        </div>
+        <div class="comments-details">
+          <div class="comments-avatar"></div>
+          <div class="comments-parts">
+            <div class="comments-name">
+              <h3 class="comments-name__header">Emilie Beach</h3>
+              <p class="comments-name__date">01/09/2021</p>
+            </div>
+            <p class="comments-name__parag">
+              I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.
+            </p>
+          </div>
+        </div>
+        <div class="comments-details">
+          <div class="comments-avatar"></div>
+          <div class="comments-parts">
+            <div class="comments-name">
+            <h3 class="comments-name__header">Miles Acosta</h3>
+              <p class="comments-name__date">12/20/2020</p>
+            </div>
+              <p class="comments-name__parag">
+                I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.
+              </p>
+            </div>
+        </div>
+    </section>
+</div>
+
 
 <footer class="site-footer">
   <section class="footer-box">
     <h2>Get in Touch</h2>
     <article class="site-footer__icons">
         <a href="http://www.instagram.com" class="site-footer__icon">
-          <img src="./styles/assets/icons/SVG/Icon-instagram.svg" alt="instagram">
+          <img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram">
         </a>
         <a href="http://www.facebook.com" class="site-footer__icon">
-          <img src="./styles/assets/icons/SVG/Icon-facebook.svg" alt="facebook">
+          <img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook">
         </a>
         <a href="http://www.twitter.com" class="site-footer__icon">
-         <img src="./styles/assets/icons/SVG/Icon-twitter.svg" alt="twitter">
+         <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter">
       </a>
     </article>
   </section>
@@ -102,11 +158,9 @@
       </div>
   </div>
   <div class="footer-logo">
-    <img src="./styles/assets/logo/Logo-bandsite.svg" alt="" class="site-header__logo">
+    <img src="./assets/logo/Logo-bandsite.svg" alt="" class="site-header__logo">
   </div>
     <p class="footer-text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
-  
 </footer>
-
 </body>
 </html>
