@@ -30,22 +30,82 @@ body {
   background-color: #323232;
 }
 
-.show-title {
+.shows {
   background-color: #fff;
 }
-
-.shows__list-item {
-  background-color: #fff;
+.shows__date {
+  font-weight: bold;
 }
-@media screen and (min-width: 768px) {
-  .shows__list-item {
-    display: flex;
+@media screen and (min-width: 1280px) {
+  .shows__container {
+    background-color: #fff;
+    padding: 0 3rem 0 15rem;
   }
 }
 
+.show-title {
+  background-color: #fff;
+  padding: 2rem;
+}
+@media screen and (min-width: 1280px) {
+  .show-title {
+    padding: 3rem;
+  }
+}
+
+.shows-list__item {
+  background-color: #fff;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-list__item {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    border-bottom: 2px solid #E1E1E1;
+  }
+}
+
+.shows__label {
+  color: #AFAFAF;
+  font-weight: bold;
+}
 @media screen and (min-width: 768px) {
   .shows__label {
     display: none;
+  }
+}
+
+.shows-fake__labels {
+  display: none;
+  padding: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .shows-fake__labels {
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+    color: #AFAFAF;
+    padding: 2rem;
+  }
+}
+
+.shows__btn {
+  width: 100%;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  .shows__btn {
+    padding: 0.5rem;
+    width: 150px;
+    border: none;
   }
 }
 
@@ -109,7 +169,7 @@ body {
 }
 .hero-image__iframe {
   margin: 1rem;
-  max-width: 90%;
+  width: 90%;
 }
 .hero-image__titles {
   padding: 1rem;
@@ -120,18 +180,24 @@ body {
 @media screen and (min-width: 768px) {
   .hero-image {
     display: flex;
+    flex-direction: column;
     min-height: 60vh;
   }
   .hero-image__titles {
     margin: auto 3.5rem;
   }
   .hero-image__iframe {
-    margin: auto 2rem auto auto;
+    width: 60%;
   }
 }
 @media screen and (min-width: 1280px) {
   .hero-image {
     display: flex;
+    flex-direction: row;
+  }
+  .hero-image__iframe {
+    width: 40%;
+    margin: auto;
   }
 }
 

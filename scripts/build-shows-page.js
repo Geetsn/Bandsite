@@ -42,7 +42,7 @@ const showsList = document.querySelector(".shows__container")
 for(let i = 0 ; i < showsData.length; i++) {
   // Create items (li tag)
   const showsLi = document.createElement("article");
-  showsLi.classList.add("shows__list-item");
+  showsLi.classList.add("shows-list__item");
   showsList.appendChild(showsLi);
 
   // Create paragraphs
@@ -52,6 +52,7 @@ for(let i = 0 ; i < showsData.length; i++) {
   showsLi.appendChild(showsDate);
 
   const showsDateText = document.createElement("p");
+  showsDateText.classList.add("shows__date")
   showsDateText.innerText = showsData[i].date;
   showsLi.appendChild(showsDateText);
 
@@ -74,8 +75,9 @@ for(let i = 0 ; i < showsData.length; i++) {
   showsLi.appendChild(showsLocationText);
   
   // Create the button
-  const showsBtn = document.createElement("btn");
-  showsBtn.innerText = 'buy tickets'
+  const showsBtn = document.createElement("button");
+  showsBtn.innerText = 'BUY TICKETS'
+  showsBtn.classList.add("shows__btn")
   showsLi.appendChild(showsBtn);
 }
 
