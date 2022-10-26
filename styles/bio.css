@@ -248,6 +248,11 @@ body {
   margin: 15px 0;
 }
 
+.comments-parts {
+  width: 100%;
+  justify-content: space-between;
+}
+
 .comment-containers {
   background-color: #fff;
   padding: 3rem 3rem 1rem 3rem;

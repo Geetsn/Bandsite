@@ -57,7 +57,7 @@ function getComment(array) {
     let date = array[i].date;
     
     let commentDetails = document.createElement("div");
-    commentDetails.classList.add("comment-details");
+    commentDetails.classList.add("comments-details");
     mainComment.appendChild(commentDetails);
 
     let commentAvatar = document.createElement("div");
@@ -79,12 +79,14 @@ function getComment(array) {
 
     let commentDate = document.createElement("p");
     commentDate.classList.add("comments-name__date");
-    commentDate.innerText = date;
+    commentDate.innerText = getNewDate(date);
     commentName.appendChild(commentDate);
 
     let commentP = document.createElement("p");
     commentP.classList.add("comments-name__parag");
     commentP.innerText = comment;
     commentParts.appendChild(commentP);
+    mainComment.appendChild(commentDetails);
   }
 }
+getComment(commentData);
