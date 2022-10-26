@@ -40,7 +40,7 @@ const showsData = [
 const showsList = document.querySelector(".shows__container")
 
 for(let i = 0 ; i < showsData.length; i++) {
-  // Create items (li tag)
+  // Create items 
   const showsLi = document.createElement("article");
   showsLi.classList.add("shows-list__item");
   showsList.appendChild(showsLi);

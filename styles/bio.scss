@@ -217,6 +217,7 @@ body {
   }
 }
 
+
 .comment-containers {
   background-color: $primary-white;
   padding: 3rem 3rem 1rem 3rem;
@@ -241,9 +242,6 @@ body {
     width: 60%;
     margin: 0 auto;
     
-    // justify-content: center;
-    // align-content:center ;
-
   }
 
   &__image {
@@ -286,10 +284,10 @@ body {
       width: 30%;
       text-align:center;
       align-self: flex-end;
-      // font-weight: bold;
     }
   }
 }
+
 
 .conversation {
   background-color: $primary-white;
@@ -317,8 +315,6 @@ body {
     @include desktop {
       width: 60%;
       margin: 0 auto;
-      // align-items: center;
-      // justify-content: center;
     }
   }
 
