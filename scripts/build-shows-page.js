@@ -1,45 +1,17 @@
-const showsData = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
-
-
 const showsList = document.querySelector(".shows__container")
 
-for(let i = 0 ; i < showsData.length; i++) {
+const getData = function(){
+axios
+.get(`https://project-1-api.herokuapp.com/showdates?api_key=20180084-46da-477c-9452-b765e215d2c4`)
+.then(res => {
+  console.log(res.data);
+  showsData(res.data);
+})}
+
+getData();
+
+function showsData(array){
+for(let i = 0 ; i < array.length; i++) {
   // Create items 
   const showsLi = document.createElement("article");
   showsLi.classList.add("shows-list__item");
@@ -53,7 +25,7 @@ for(let i = 0 ; i < showsData.length; i++) {
 
   const showsDateText = document.createElement("p");
   showsDateText.classList.add("shows__date")
-  showsDateText.innerText = showsData[i].date;
+  showsDateText.innerText = new Date(array[i].date).toDateString();
   showsLi.appendChild(showsDateText);
 
   const showsVenue = document.createElement("p");
@@ -62,7 +34,7 @@ for(let i = 0 ; i < showsData.length; i++) {
   showsLi.appendChild(showsVenue);
 
   const showsVenueText = document.createElement("p");
-  showsVenueText.innerText = showsData[i].venue;
+  showsVenueText.innerText = array[i].place;
   showsLi.appendChild(showsVenueText);
 
   const showsLocation = document.createElement("p");
@@ -71,7 +43,7 @@ for(let i = 0 ; i < showsData.length; i++) {
   showsLi.appendChild(showsLocation);
 
   const showsLocationText = document.createElement("p");
-  showsLocationText.innerText = showsData[i].location
+  showsLocationText.innerText = array[i].location
   showsLi.appendChild(showsLocationText);
   
   // Create the button
@@ -80,5 +52,4 @@ for(let i = 0 ; i < showsData.length; i++) {
   showsBtn.classList.add("shows__btn")
   showsLi.appendChild(showsBtn);
 }
-
-
+}

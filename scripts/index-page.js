@@ -1,60 +1,43 @@
-const commentData = [
-  {
-      name:'Connor Walton',
-      commentText:"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-      date:new Date (2021, 17, 02)
-  },
-  {
-      name:'Emilie Beach',
-      commentText:"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-      date:new Date (2021, 09, 01)
-  },
-  {
-      name:'Miles Acosta',
-      commentText:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-      date:new Date (2020, 11, 20)
-  }
-];
-
 getNewDate= (date) => 
 {
-  let year = date.getFullYear();
+  // let year = date.getFullYear();
 
-  let month =(1 + date.getMonth()).toString();
-  month = month.length > 1 ? month : '0' + month;
+  // let month =(1 + date.getMonth()).toString();
+  // month = month.length > 1 ? month : '0' + month;
 
-  let day = date.getDate().toString();
-  day = day.length > 1 ? day : '0' + day;
+  // let day = date.getDate().toString();
+  // day = day.length > 1 ? day : '0' + day;
 
-  return month + '/' + day + '/' + year;
+  // return month + '/' + day + '/' + year;
+  return new Date(date).toLocaleDateString("en-US");
 }
 
 let mainComment = document.querySelector(".comments")
 
-const form = document.querySelector(".comment-container__form");
-console.log(form);
-form.addEventListener('submit', event => {
-event.preventDefault();
-const name = event.target.fullName.value;
-console.log(name);
-const comment = event.target.comment.value;
-console.log(comment);
-commentData.unshift(
-  {
-    name:name,
-    commentText:comment,
-    date: new Date()
-  }
-)
-   mainComment.innerText = "";
-  getComment(commentData);
-});
+const getData = function(){
+axios
+.get(`https://project-1-api.herokuapp.com/comments?api_key=20180084-46da-477c-9452-b765e215d2c4`)
+.then(res => {
+  console.log(res.data);
+  getComment(res.data);
+}
+)}
+
+getData();
 
 function getComment(array) {
-  for (let i = 0; i < array.length; i++) {
+  mainComment.innerHTML= "";
+  for (let i = 0; i <= array.length ; i++) {
+  array.sort((a,b) =>{
+    return new Date(b.timestamp) - new Date(a.timestamp)
+  })    
+
+
     let name = array[i].name;
-    let comment = array[i].commentText;
-    let date = array[i].date;
+    let comment = array[i].comment;
+    let date = new Date(array[i].timestamp);
+    
+
     
     let commentDetails = document.createElement("div");
     commentDetails.classList.add("comments-details");
@@ -89,4 +72,21 @@ function getComment(array) {
     mainComment.appendChild(commentDetails);
   }
 }
-getComment(commentData);
+
+const addComment = document.getElementById("comment-container__form");
+addComment.addEventListener('submit', event => {
+  event.preventDefault();
+  let comment = {
+    "name": event.target.fullName.value,
+    "comment": event.target.comment.value,
+  }
+  axios
+  .post(`https://project-1-api.herokuapp.com/comments?api_key=20180084-46da-477c-9452-b765e215d2c4`, comment)
+  .then(res => {
+      console.log(res.data);
+      getData(getComment);
+      event.target.fullName.value = "";
+      event.target.comment.value = "";
+    }
+  )
+})
