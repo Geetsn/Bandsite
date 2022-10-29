@@ -20,36 +20,38 @@ for(let i = 0 ; i < array.length; i++) {
   // Create paragraphs
   const showsDate = document.createElement("p");
   showsDate.innerText = "Date";
-  showsDate.classList.add("shows__label")
+  showsDate.classList.add("shows__label");
   showsLi.appendChild(showsDate);
 
   const showsDateText = document.createElement("p");
-  showsDateText.classList.add("shows__date")
+  showsDateText.classList.add("shows__date");
   showsDateText.innerText = new Date(array[i].date).toDateString();
   showsLi.appendChild(showsDateText);
 
   const showsVenue = document.createElement("p");
   showsVenue.innerText = "Venue";
-  showsVenue.classList.add("shows__label")
+  showsVenue.classList.add("shows__label");
   showsLi.appendChild(showsVenue);
 
   const showsVenueText = document.createElement("p");
   showsVenueText.innerText = array[i].place;
+  showsVenueText.classList.add("shows__venue");
   showsLi.appendChild(showsVenueText);
 
   const showsLocation = document.createElement("p");
   showsLocation.innerText = "Location";
-  showsLocation.classList.add("shows__label")
+  showsLocation.classList.add("shows__label");
   showsLi.appendChild(showsLocation);
 
   const showsLocationText = document.createElement("p");
-  showsLocationText.innerText = array[i].location
+  showsLocationText.innerText = array[i].location;
+  showsLocationText.classList.add("shows__location");
   showsLi.appendChild(showsLocationText);
   
   // Create the button
   const showsBtn = document.createElement("button");
   showsBtn.innerText = 'BUY TICKETS'
-  showsBtn.classList.add("shows__btn")
+  showsBtn.classList.add("shows__btn");
   showsLi.appendChild(showsBtn);
 }
 }

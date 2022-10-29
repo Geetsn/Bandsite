@@ -9,92 +9,6 @@
   padding: 0;
 }
 
-body {
-  background-color: $primary-black;
-}
-
-.shows {
-  background-color: $primary-white;
-
-  &__date {
-    font-weight: bold;
-  }
-
-  @include desktop {
-    
-    &__container {
-      background-color: $primary-white;
-      padding: 0 3rem 0 15rem;
-    }
-  }
-}
-
-.show-title {
-  background-color: $primary-white;
-  padding: 2rem;
-
-  @include desktop {
-    padding: 3rem;
-  }
-}
-
-.shows-list__item {
-  background-color: $primary-white;
-  padding: 2rem;
-  
-  @include tablet {
-    display: flex;
-    padding: 2rem;
-    justify-content: space-between;
-    border-bottom: 2px solid $secondary-mercury;
-  }
-}
-
-
-.shows__label {
-  color: #AFAFAF;
-  font-weight: bold;
-
-  
-  
-  @include tablet {
-    display: none;
-  }
-}
-
-.shows-fake__labels {
-
-  display: none;
-  padding: 2rem;
-  @include tablet {
-    display: flex;
-    background-color: $primary-white;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: bold;
-    color: #AFAFAF;
-    padding: 2rem;
-    
-  }
-}
-
-.shows__btn {
-  width: 100%;
-  background-color: $primary-black;
-  color: $primary-white;
-  border-radius: 4px;
-  margin-top: 1rem;
-  padding: .5rem;
-  border: none;
-  
-  
-  @include tablet {
-    padding: .5rem;
-    width: 150px;
-    border: none;
-  }
-}
-
 .site-header {
   background-color: $primary-black;
   display: flex;
@@ -115,11 +29,9 @@ body {
     padding:0 5rem;
   }
 
-
   &__list {
     display: flex;
     justify-content: center;
-    
   }
 
   &__lists{
@@ -128,6 +40,11 @@ body {
     text-align: center;
     display: flex;
     justify-content: center;
+    width: 50%;
+
+    @include tablet {
+      width: 2%;
+    }
   }
 
   &__link {
@@ -141,12 +58,9 @@ body {
   }
 
 }
+
 .active {
   border-bottom: 4px solid $primary-white;
-
-  @include tablet {
-    width: 6%;
-  }
 }
 
 .hero-image {
@@ -157,15 +71,20 @@ body {
   color: $primary-white;
   
   &__iframe {
-    margin: 1rem;
+    margin: 1.5rem;
     width: 90%;
   }
   &__titles {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    
+    max-width: 60%;
+  }
+
+  &__title {
+    width: 80%;
+    padding: auto  auto 5rem 5rem;
   }
 
   @include tablet {
@@ -174,126 +93,146 @@ body {
     min-height: 60vh;
     &__titles {
       margin:  auto 3.5rem;
-    }
-    &__iframe {
-      width: 60%;
+      width: 35%;
     }
 
+    &__iframe {
+      padding-left: 3rem;
+      margin-bottom: 3rem;
+      width: 50%;
+    }
   }
+
   @include desktop {
     display: flex;
     flex-direction: row;
 
     &__iframe {
-      width: 40%;
+      width: 45%;
       margin: auto;
     }
   }
 }
 
-.shows-tabletDetails {
-    display: none;
-
-    @include tablet {
-      display: flex;
-      padding: 3rem;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: bold;
-      color: #AFAFAF;
-    }
+.shows {
+  background-color: $primary-white;
+  @include tablet {
+    margin: 0 3rem;
   }
-  
-  .shows-container {
-    background-color: $primary-white;
-    padding: 1rem;
-    
-    @include tablet {
-     display: flex;
-      padding: 3rem;
-      width: 100%;
-      justify-content: left;
-    }
 
-    &__title {
-      padding: 1rem;
-      
-      @include tablet {
-        padding: 1rem;
-      }
-
-      @include desktop {
-        padding-left: 5rem;
-      }
-    }
-    
-    &__lable {
-      color: #AFAFAF;
-      font-weight: bold;
-      padding: 1rem 0;
-
-      @include tablet {
-        display: none;
-      }
-
-      @include desktop {
-        display: none;
-      }
+  &__container {
+    padding:0 2rem;
   }
 
   &__date {
     font-weight: bold;
-    padding: .5rem 0;
-
-    @include tablet {
-      width: 100%;
-    }
+    margin-bottom: 1rem;
   }
 
   &__venue {
-    padding: .5rem 0;
-
-    @include tablet {
-      width: 100%;
-    }
+    margin-bottom: 1rem;
   }
 
   &__location {
-    padding: .5rem 0;
+    margin-bottom: 1rem;
+  }
 
-    @include tablet {
-      width: 100%;
+  @include desktop {
+    &__container {
+      background-color: $primary-white;
+      padding: 0 3rem 0 15rem;
     }
   }
- 
+}
 
+.show-title {
+  background-color: $primary-white;
+  padding: 3rem 0 0 3.5rem;
 
-  &__btn {
-    background-color: $primary-black;
-    color: $primary-white;
-    border: none;
-    border-radius: 4px;
-    padding: .5rem;
-    margin-top: 1rem;
+  @include desktop {
+    padding: 3rem 0 0 6rem;
+  }
+}
+
+.shows-list__item {
+  background-color: $primary-white;
+  padding: 2rem;
+  border-bottom: 1px solid $secondary-mercury;
+  
+  @include tablet {
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    border-bottom: 1px solid $secondary-mercury;
+  }
+}
+
+.shows-list__item:hover {
+  background-color: $secondary-mercury;
+}
+
+.shows__label {
+  color: #AFAFAF;
+  font-weight: bold;
+  padding: .5rem 0;
+  
+  @include tablet {
+    display: none;
+  }
+}
+
+.shows-fake__labels {
+  display: none;
+  padding: 2rem;
+  @include tablet {
+    display: flex;
+    background-color: $primary-white;
+    justify-content: space-between;
     width: 100%;
+    font-weight: bold;
+    color: #AFAFAF;
+    padding: 2rem;
 
-    @include tablet {
-      width: 100%;
+    @include desktop {
+      padding: 0 0 1rem 2.5rem;
     }
   }
 
+  p {
+    width: 18%;
+  }
+}
+
+.shows__btn {
+  width: 100%;
+  background-color: $primary-black;
+  color: $primary-white;
+  border-radius: 4px;
+  margin-top: 1rem;
+  padding: .5rem;
+  border: none;
+  
+  @include tablet {
+    padding: .5rem;
+    width: 150px;
+    border: none;
+  }
 }
 
 .site-footer {
   background-color: $primary-black;
   color: $primary-white;
   padding: 2rem;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 
   &__icons {
     display: flex;
     width: 40%;
     margin: 10px 0;
+
+    @include desktop {
+      width: 50%;
+    }
   }
 
   &__icon {
@@ -336,7 +275,6 @@ body {
   &-card__detail {
     @include subheader;
   }
-
 
   &-card__address {
     @include copy;

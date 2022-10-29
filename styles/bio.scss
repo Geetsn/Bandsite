@@ -33,11 +33,9 @@ body {
     padding:0 5rem;
   }
 
-
   &__list {
     display: flex;
     justify-content: center;
-    
   }
 
   &__lists{
@@ -46,6 +44,11 @@ body {
     text-align: center;
     display: flex;
     justify-content: center;
+    width: 50%;
+
+    @include tablet {
+      width: 2%;
+    }
   }
 
   &__link {
@@ -53,7 +56,7 @@ body {
     text-decoration: none;
   }
 
-  &__logo  {
+  &__logo {
     width: 120px;
     height: 20px;
   }
@@ -61,14 +64,9 @@ body {
 }
 .active {
   border-bottom: 4px solid $primary-white;
-
-  @include tablet {
-    width: 6%;
-  }
-
 }
 
-.hero-image{
+.hero-image {
   background: linear-gradient($opacity_by, $opacity_by) , url(../assets/images/hero-bio.jpg);
   height:30vh ;
   background-size: cover;
@@ -90,10 +88,10 @@ body {
 
   &__title {
     color: $primary-white;
-  
+    
     @include tablet {
-      @include page_header;
-    }
+     @include page_header;
+     }
 
     @include desktop {
       @include page_header;
@@ -102,61 +100,76 @@ body {
   }
 }
 
-.main-image {
-  width: 100%;
+.about-section {
+  background-color: $primary-white;
+  padding: 1rem;
 
-  @include tablet {
-    width: 80%;
-    margin: 0 80px;
-  }
-}
-
-.main-heading { 
-  @include tablet {
-    padding:0 5rem;
-
+  &__heading {
+   padding: 1.5rem 0 1rem 0 ;
   }
 
   @include desktop {
-    margin-left: 3rem ;
+    padding: 2rem 4rem;
   }
+
+  &__image {
+    width: 100%;
+    
+    @include tablet {
+      width: 80%;
+      margin: 0 80px;
+    }
+  }
+
+  &__text {
+    width: auto;
+    @include tablet {
+     margin: 0 80px;
+    }
+
+    @include desktop {
+      width: 80%;
+    }
+     
+    &__span {
+     font-weight: bold;
+    }
+   }
 }
 
-.main-text {
- @include tablet {
-  margin: 0 80px;
- }
+.main {
+  margin: 2rem 0;
+
+  &-heading { 
+     margin: 15px 0;
+    @include tablet {
+      padding:0 5rem;
   
- &__span {
-  font-weight: 400;
- }
-}
-
-.main-paragraph {
-  @include tablet {
-  display: flex;
-  padding: 0 1rem;
-  margin: 0 3rem;
-  width: 85%;
-  }
-}
-
-.main-heading__paragraph {
-  @include tablet {
-    padding: 15px;
+    }
   }
 
-  @include desktop {
-    padding: 1rem;
+  &-paragraph {
+    gap: 1rem;
+    @include tablet {
+    display: flex;
+    padding: 0 2rem;
+    margin: 0 3rem;
+    width: 85%;
+    }
+  }
+
+  &-heading__paragraph {
+    margin-bottom: 1rem;
   }
 }
 
 .gallery-image {
   background-color: $secondary_alabaster;
   width: 100%;
+  padding-bottom: 1rem;
   @include tablet {
     width: 30%;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
   }
 }
 
@@ -168,12 +181,12 @@ body {
   }
 }
 
-
 .gallery {
+  padding: 1rem;
   background-color: #FAFAFA;
 
   &-heading {
-    padding: 1rem;
+    padding: 1rem 0;
 
     @include tablet {
       @include section-header;
@@ -189,42 +202,16 @@ body {
     @include body_copy;
       padding: 2rem 4rem;
     }
-  }
-
-
-.about-section {
-  background-color: $primary-white;
-  padding: 1rem;
-
-  &__heading {
-   padding: 1.5rem 0 1rem 0 ;
-
-   @include tablet {
-    @include section-header;
-   }
-  }
-
-  @include desktop {
-    padding: 2rem 4rem;
-  }
-}
-
-.main {
-  margin: 15px 0;
-
-  &-heading {
-    margin: 15px 0;
-  }
 }
 
 .comments-parts {
   width: 100%;
   justify-content: space-between;
 }
+
 .comment-containers {
   background-color: $primary-white;
   padding: 3rem 3rem 1rem 3rem;
-  
   
   &__title {
     color: #323232;
@@ -237,6 +224,16 @@ body {
   border-bottom: 1px solid $secondary-mercury;
   padding-bottom: 1rem;
 
+  &__text {
+    resize: none;
+    background-color: $secondary_alabaster;
+  }
+
+  &__nameInput {
+    padding: .6rem;
+    background-color: $secondary_alabaster;
+  }
+
   @include tablet {
     padding-left: 2rem;
   }
@@ -244,7 +241,6 @@ body {
   @include desktop {
     width: 60%;
     margin: 0 auto;
-    
   }
 
   &__image {
@@ -266,14 +262,12 @@ body {
   &__title {
     color: #AFAFAF;
     padding: .5rem 0;
-    // font-weight:bold ;
   }
   
   &__text {
     margin-top: .5 rem;
     padding: .5rem;
   }
-
 
   &__btn {
     background-color: $primary-black;
@@ -291,7 +285,6 @@ body {
   }
 }
 
-
 .conversation {
   background-color: $primary-white;
   padding-left: 0 .5rem;
@@ -304,7 +297,6 @@ body {
   text-align: left;
   justify-content: space-between;
   padding: 2rem;
-
   
   &-details {
     display: flex;
@@ -351,7 +343,6 @@ body {
   }
 }
 
-
 .site-footer {
   background-color: $primary-black;
   color: $primary-white;
@@ -362,6 +353,14 @@ body {
     display: flex;
     width: 40%;
     margin: 10px 0;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
+
+    @include desktop {
+      margin-right: 4.5rem;
+    }
   }
 
   &__icon {
@@ -404,7 +403,6 @@ body {
   &-card__detail {
     @include subheader;
   }
-
 
   &-card__address {
     @include copy;
