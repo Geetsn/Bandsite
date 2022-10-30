@@ -191,6 +191,10 @@ body {
   background-color: #FAFAFA;
   width: 100%;
   padding-bottom: 1rem;
+  filter: grayscale(90%);
+}
+.gallery-image:hover {
+  filter: grayscale(0);
 }
 @media screen and (min-width: 768px) {
   .gallery-image {
@@ -365,6 +369,16 @@ body {
 }
 .comments-name__parag {
   width: 100%;
+}
+
+.comments-name__parag_btnContainer {
+  text-align: end;
+}
+
+.comments-name__parag_likeB {
+  margin: 0 5px;
+  background-color: #fff;
+  border: none;
 }
 
 .site-footer {
